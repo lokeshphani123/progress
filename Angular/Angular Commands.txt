@@ -1,0 +1,17 @@
+Check Angular version:
+	ng --version
+Install Angular:
+	npm install -g @angular/cli
+Create new project:
+	ng new angular-playground
+Start Angular project:
+	ng serve
+Update Angular version:
+	npm uninstall -g @angular/cli
+	npm install -g @angular/cli
+
+
+
+Node:
+Update node globally:
+	npm update -g
