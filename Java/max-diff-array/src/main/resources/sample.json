@@ -1,0 +1,27 @@
+[
+{
+  "combination": {
+    "empName": "Lokesh",
+    "empId": 8,
+    "empOrg": "Something"
+  },
+  "menu": [{
+    "id": 10
+  },{
+    "id": 18
+  }]
+},
+  {
+    "combination": {
+      "empName": "Charan",
+      "empId": 9,
+      "empOrg": "thing"
+    },
+    "menu": [{
+      "id": 11
+    },{
+      "id": 19
+    }]
+  }
+
+]

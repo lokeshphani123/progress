@@ -1,0 +1,12 @@
+cloud:
+  aws:
+    region:
+      static: us-east-1
+      auto: false
+    stack:
+      auto: false
+    credentials:
+      access-key: AKIA3MISOKPL7Z5ZBXMB
+      secret-key: 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
+    end-point:
+      uri: https://sqs.us-east-1.amazonaws.com/782259606487/Buffer_Queue_dev
