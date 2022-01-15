@@ -15,3 +15,10 @@ Update Angular version:
 Node:
 Update node globally:
 	npm update -g
+
+Angular:
+Generate component from CLI:
+	ng generate component server-2-playground
+	(or)
+	ng g c server-2-playground
+
