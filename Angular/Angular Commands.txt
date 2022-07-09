@@ -9,8 +9,11 @@ Start Angular project:
 Update Angular version:
 	npm uninstall -g @angular/cli
 	npm install -g @angular/cli
-
-
+Execute and open in new browser:
+	ng serve --open
+Create Component 
+	ng generate component xyz
+	ng g c xyz
 
 Node:
 Update node globally:

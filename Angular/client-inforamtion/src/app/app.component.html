@@ -1,0 +1,12 @@
+<h1>Angular Router App</h1>
+<!-- This nav gives you links to click, which tells the router which route to use (defined in the routes constant in  AppRoutingModule) -->
+<nav>
+  <ul class="unorder-list">
+    <li><a routerLink="/home" routerLinkActive="active">Home</a></li>
+    <li><a routerLink="/about-us" routerLinkActive="active">About us</a></li>
+    <li><a routerLink="/contact-us" routerLinkActive="active">Contact us</a></li>
+  </ul>
+</nav>
+
+<!-- Router outlet is used to load different components. Therefore Angular is called single page.-->
+<router-outlet></router-outlet>

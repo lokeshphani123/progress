@@ -1,0 +1,25 @@
+table, th, td {
+    border: 1px solid black;
+  }
+  th{
+    border: 1px solid black;
+    padding: 2%;
+    color: blueviolet;
+    background-color: blanchedalmond;
+  }
+  td{
+    padding: 1%;
+    background-color:  aqua ;
+  }
+
+  img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  h1 {text-align: center;}
+  p {text-align: center;
+  }
+  body {
+    background-color: aliceblue;
+  }  
