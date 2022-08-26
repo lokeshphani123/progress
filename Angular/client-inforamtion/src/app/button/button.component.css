@@ -1,0 +1,10 @@
+button {
+    align-items: center;
+    margin-left: 50px;
+    background-color: chartreuse;
+    font-style: strong;   
+}
+label, input, p {
+    margin-left: 50px;
+}
+

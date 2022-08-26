@@ -1,27 +1,48 @@
+*******************************************************************
+Angular
+*******************************************************************
 Check Angular version:
 	ng --version
+
 Install Angular:
 	npm install -g @angular/cli
+
 Create new project:
 	ng new angular-playground
+	(or)
+	ng new angular-playground --no-strict
+
 Start Angular project:
 	ng serve
+
 Update Angular version:
 	npm uninstall -g @angular/cli
 	npm install -g @angular/cli
+
 Execute and open in new browser:
 	ng serve --open
+
 Create Component 
-	ng generate component xyz
-	ng g c xyz
-
-Node:
-Update node globally:
-	npm update -g
-
-Angular:
-Generate component from CLI:
 	ng generate component server-2-playground
 	(or)
 	ng g c server-2-playground
+
+
+*******************************************************************
+Node
+*******************************************************************
+Update node globally:
+	npm update -g
+
+Bootstrap install
+	npm install --save bootstrap@3
+	(or)
+	npm install --save bootstrap
+
+*******************************************************************
+VS Code
+*******************************************************************
+Open Terminal:
+Ctrl+Shift+`
+
 

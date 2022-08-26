@@ -1,0 +1,14 @@
+*******************************************************************
+Errors
+*******************************************************************
+Issue:
+	An unhandled exception occurred: ENOENT: no such file or directory, lstat
+Solution:
+	The problem was solved just by renaming the path:
+		./dist/ngx-bootstrap/datepicker/bs-datepicker.css to ./node_modules/ngx-bootstrap/datepicker/bs-datepicker.css
+
+*******************************************************************
+Tips
+*******************************************************************
+Debugging
+    Navigate to webpack in Dev Tool's sources to see the ts files rather than getting lost in the main.js source map file
