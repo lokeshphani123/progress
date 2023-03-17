@@ -1,0 +1,189 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2708
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;\f1\fnil\fcharset0 Menlo-Regular;}
+{\colortbl;\red255\green255\blue255;\red34\green255\blue6;\red255\green255\blue255;\red71\green138\blue206;
+\red203\green203\blue202;\red67\green180\blue255;\red67\green192\blue160;\red141\green213\blue254;\red212\green213\blue153;
+\red194\green125\blue100;\red202\green202\blue202;\red255\green255\blue255;\red0\green0\blue0;}
+{\*\expandedcolortbl;;\cssrgb\c0\c100000\c0;\cssrgb\c100000\c100000\c99985\c0;\cssrgb\c34146\c61677\c84338;
+\cssrgb\c83320\c83320\c83112;\cssrgb\c31469\c76285\c100000;\cssrgb\c30631\c78928\c69023;\cssrgb\c61545\c86704\c99884;\cssrgb\c86247\c86215\c66392;
+\cssrgb\c80772\c56796\c46790;\cssrgb\c83229\c83229\c83125;\cssrgb\c100000\c100000\c100000\c0;\cssrgb\c0\c0\c0;}
+\margl1440\margr1440\vieww30040\viewh18900\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 What is GraphQL?\
+- Say there are  multiple clients and one server that might have python, node, java etc\
+- Rest API provides multiple endpoint while the GraphQL provides a single endpoint\
+\
+Why GraphQL?\
+GraphQL creates fast and flexible APIs, giving clients complete control to ask for just the data they need.\
+Fewer HTTP requests. Flexible data querying. Less code to manage.\
+- It is fast (Rest API provides multiple endpoint while the GraphQL provides a single endpoint. Instead of server determine what data is needed GraphQL makes client determine what data is needed)\
+- It is flexible (Facebook had a problem fetching data from backend for the desktop version vs the mobile version. Obviously, mobile version has low real estate like user doesn\'92t need comments until clicked unlike the desktop version. Therefore, for a call of the desktop version backend might have to do 3 db calls while the backend for mobile has to do just 1)\
+- GraphQL is easy to maintain (In case of REST we need to add additional endpoint while in GraphQL we just need to change the client\'92s query)\
+\
+VS Code Packages:\
+- Npm\
+- Npm	Intellisense\
+- GraphQL for VS Code\
+- Docker\
+- Duplicate Action\
+- Babel ES6/ES7\
+- Beautify JSON, TS, JS\
+\
+What is GraphQL?\
+Graph is the visual representation of the data and how is related.\
+ex: User posts post and comments \
+	- User: id, name, age\
+	- Post: id, title, body, published\
+	- Comment: id, text\
+Relations: \
+	- A user can have multiple posts\
+	- A post can have multiple comments, \
+	- An user can have multiple comments\
+\
+GraphQL queries:\
+Graphql-demo.mead.io\
+	- Query allows us to fetch data\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+\cf0 		ex 1: query \{\
+			hello\
+			courseInstructor\
+			\}\
+		ex 2: query \{\
+			hello\
+			courseInstructor\
+			\}\
+\
+		ex 3:\
+
+\fs26 \kerning1\expnd1\expndtw6
+			query\{\
+			hello\
+		  	courseInstructor\
+			 course\
+			  me\{\
+			    id\
+			    name\
+			    email\
+			    posts\{\
+				      id\
+				      title\
+				      body\
+				      published\
+				      author\{\
+				        name\
+				      \}\
+				    \}\
+			    comments\{\
+				      id\
+				      text\
+				      post\{\
+				        title\
+				      \}\
+			      author\{\
+			        name\
+				      \}\
+				    \}\
+				  \}\
+				\}\kerning1\expnd0\expndtw0 \
+
+\fs24 \
+	- Mutation allows to change data\
+	- Subscription allows to watch data for changes\
+Project setting:\
+	- babblejs.io takes in JS and outputs best JS tuned code\
+	- Create a project folder\
+	- run \'92npm init\'92\
+	- npm install babel-cli babel-env\
+	- check if babelrc file is created\
+	- In babelrc file check if presets [\'93env\'94] is present\
+	- create src/index.js\
+	- add console.log(\'93Hello\'94) to index.js\
+	- in package.json add \'93start\'94:\'94babel-node src/index.js\'94\
+	- run \'91npm start\'92 to check if the console.log is printed on the terminal\
+	- To export and import ES6:\
+		- Create myModule.js and add\
+		- const message = \'91Some message from myModule.js\'92				- const location = \'91Texas\'92	\
+		- const getGreeting = (name) => \{ return \'93Hello \'94+name; \}\
+		- export \{ message, location as default, getGreeting \}\
+		- Import it to the index.js\
+		- import myLocation, \{ message, getGreeting \} from \'91./myModule.js\'92\
+		- console.log(message, myLocation)\
+		- console.log(myLocation(\'93Justin\'94))\
+\
+GraphQL & Nodejs:\
+	There are multiple client for different language. \
+	Type Definitions (Application Schema): Describe the operations of our app and data structures.\
+\cf2 		ex: cost typeDefs = `type Query \{\
+						hello: String!\
+						\}`\
+		note: \'91!\'92 Above means don\'92t return null\cf0 \
+\
+	Resolver: They are set of functions for each of the operations that app do like multiply, addition and any other functions\
+\cf2 		ex: const resolvers  =  \{\
+			Query: \{\
+				hello() \{\
+					return \'91This is my first query!\'92\
+				\}\
+			\}\
+		\}\cf0 \
+\
+	Server:\
+\cf2 \cb3 		
+\f1 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec4 const\cb3 \strokec5  \cb3 \strokec6 server\cb3 \strokec5  = \cb3 \strokec4 new\cb3 \strokec5  \cb3 \strokec7 GraphQLServer\cb3 \strokec5 (\{\
+\pard\pardeftab720\partightenfactor0
+\cf2 \cb3 \strokec5 		    \cb3 \strokec8 typeDefs\cb3 \strokec5 ,\
+		    \cb3 \strokec8 resolvers\cb3 \strokec5 \
+		\})\
+\
+\cb3 \strokec6 		server\cb3 \strokec5 .\cb3 \strokec9 start\cb3 \strokec5 (() \cb3 \strokec4 =>\cb3 \strokec5  \{\
+		    \cb3 \strokec8 console\cb3 \strokec5 .\cb3 \strokec9 log\cb3 \strokec5 (\cb3 \strokec10 'The server is up!'\cb3 \strokec5 )\
+		\})\cf11 \cb12 \strokec11 \
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f0 \cf2 \cb1 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 \
+\cf13 Sclar Types in GraphQL:\
+	String, Boolean, Int, Float, ID\
+\cf0 \
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+}
