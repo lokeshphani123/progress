@@ -1,5 +1,23 @@
 import { Addition } from "./myModule";
 import { GraphQLServer } from 'graphql-yoga'
+//ID, String, Int, Company, Custom type, Array
+//The employeeProjects also takes in a Float to filter companies with more than or equal to suplied tenure
+
+const projects = [{
+    projectId: 1,
+    projectName: "Amazon Fresh",
+    projectTenure: 3.5        
+},
+{
+    projectId: 2,
+    projectName: "Amazon Retail",
+    projectTenure: 5        
+},
+{
+    projectId: 3,
+    projectName: "Amazon Shipping",
+    projectTenure: 2.5        
+}]
 
 const typeDefs = `
     type Query {
@@ -8,6 +26,7 @@ const typeDefs = `
         employeeAge: Int
         employeeCompany: Company!
         employeeNote(note: String!, date: String!): String!
+        employeeProjects(tenure: Float!, alphabet: String): [Project!]!
     }
     type Company {
         companyId: ID!
@@ -15,6 +34,11 @@ const typeDefs = `
         city: String!
         state: String!
         country: String!
+    }
+    type Project {
+        projectId: ID!
+        projectName: String!
+        projectTenure: Float!
     }
 `
 
@@ -41,6 +65,17 @@ const resolvers = {
         },
         employeeNote(parent, args, ctx, info) {
             return "Note: "+args.note+". "+args.date
+        },
+        employeeProjects(parent, args, ctx, info){
+            const tenureFilter = projects.filter((project) => {
+                return project.projectTenure >= args.tenure
+            })
+            if(args.alphabet){
+                return tenureFilter.filter((project) => {
+                    return project.projectName.toLowerCase().includes(args.alphabet.toLowerCase())
+                })    
+            }
+            return tenureFilter
         }
     }
 }
