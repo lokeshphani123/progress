@@ -1,81 +1,24 @@
 import { GraphQLServer } from 'graphql-yoga'
-import uuidv4 from 'uuid'
-
-// Scalar types - String, Boolean, Int, Float, ID
-
-// Demo user data
-let users = [{
-    id: '1',
-    name: 'Andrew',
-    email: 'andrew@example.com',
-    age: 27
-}, {
-    id: '2',
-    name: 'Sarah',
-    email: 'sarah@example.com'
-}, {
-    id: '3',
-    name: 'Mike',
-    email: 'mike@example.com'
-}]
-
-let posts = [{
-    id: '10',
-    title: 'GraphQL 101',
-    body: 'This is how to use GraphQL...',
-    published: true,
-    author: '1'
-}, {
-    id: '11',
-    title: 'GraphQL 201',
-    body: 'This is an advanced GraphQL post...',
-    published: false,
-    author: '1'
-}, {
-    id: '12',
-    title: 'Programming Music',
-    body: '',
-    published: true,
-    author: '2'
-}]
-
-let comments = [{
-    id: '102',
-    text: 'This worked well for me. Thanks!',
-    author: '3',
-    post: '10'
-}, {
-    id: '103',
-    text: 'Glad you enjoyed it.',
-    author: '1',
-    post: '10'
-}, {
-    id: '104',
-    text: 'This did no work.',
-    author: '2',
-    post: '11'
-}, {
-    id: '105',
-    text: 'Nevermind. I got it to work.',
-    author: '1',
-    post: '12'
-}]
+import { v4 as uuidv4 } from 'uuid'
+import { users } from './cargos/users'
+import { posts } from './cargos/posts'
+import { comments } from './cargos/comments'
 
 // Type definitions (schema)
 const typeDefs = `
     type Query {
-        users(query: String): [User!]!
-        posts(query: String): [Post!]!
-        comments: [Comment!]!
+        getUsers(query: String): [User!]!
+        getPosts(query: String): [Post!]!
+        getComments: [Comment!]!
         me: User!
         post: Post!
     }
 
     type Mutation {
         createUser(data: CreateUserInput!): User!
-        deleteUser(id: ID!): User!
         createPost(data: CreatePostInput!): Post!
         createComment(data: CreateCommentInput!): Comment!
+        deleteUser(id: ID!): User!
     }
 
     input CreateUserInput {
@@ -126,7 +69,7 @@ const typeDefs = `
 // Resolvers
 const resolvers = {
     Query: {
-        users(parent, args, ctx, info) {
+        getUsers(parent, args, ctx, info) {
             if (!args.query) {
                 return users
             }
@@ -135,7 +78,7 @@ const resolvers = {
                 return user.name.toLowerCase().includes(args.query.toLowerCase())
             })
         },
-        posts(parent, args, ctx, info) {
+        getPosts(parent, args, ctx, info) {
             if (!args.query) {
                 return posts
             }
@@ -146,7 +89,7 @@ const resolvers = {
                 return isTitleMatch || isBodyMatch
             })
         },
-        comments(parent, args, ctx, info) {
+        getComments(parent, args, ctx, info) {
             return comments
         },
         me() {
@@ -191,16 +134,16 @@ const resolvers = {
 
             const deletedUsers = users.splice(userIndex, 1)
 
-            posts = posts.filter((post) => {
+            posts.filter((post) => {
                 const match = post.author === args.id
 
                 if (match) {
-                    comments = comments.filter((comment) => comment.post !== post.id)
+                    comments.filter((comment) => comment.post !== post.id)
                 }
 
                 return !match
             })
-            comments = comments.filter((comment) => comment.author !== args.id)
+         comments.filter((comment) => comment.author !== args.id)
 
             return deletedUsers[0]
         },

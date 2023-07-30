@@ -1,24 +1,21 @@
 export let comments = [{
-    "commentId": 1,
-    "text":"No he is not",
-    "author":2,
-    "post":1
-},
-{
-    "commentId": 2,
-    "text":"Sale Sale!",
-    "author":3,
-    "post":1
-},
-{
-    "commentId": 3,
-    "text":"Flash Sale!",
-    "author":3,
-    "post":1
-},
-{
-    "commentId": 4,
-    "text":"No he is not yet",
-    "author":1,
-    "post":1
+    id: '102',
+    text: 'This worked well for me. Thanks!',
+    author: '3',
+    post: '10'
+}, {
+    id: '103',
+    text: 'Glad you enjoyed it.',
+    author: '1',
+    post: '10'
+}, {
+    id: '104',
+    text: 'This did no work.',
+    author: '2',
+    post: '11'
+}, {
+    id: '105',
+    text: 'Nevermind. I got it to work.',
+    author: '1',
+    post: '12'
 }]

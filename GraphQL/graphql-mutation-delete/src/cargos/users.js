@@ -1,19 +1,14 @@
 export let users = [{
-    "userId" : 1,
-    "name" : "Thor",
-    "email" : "thor@marvel.com",
-    "age" : 50
-},
-{
-    "userId" : 2,
-    "name" : "Captain America",
-    "email" : "ca@marvel.com",
-    "age" : 35
-},
-{
-    "userId" : 3,
-    "name" : "Ironman",
-    "email" : "im@marvel.com",
-    "age" : 45
+    id: '1',
+    name: 'Andrew',
+    email: 'andrew@example.com',
+    age: 27
+}, {
+    id: '2',
+    name: 'Sarah',
+    email: 'sarah@example.com'
+}, {
+    id: '3',
+    name: 'Mike',
+    email: 'mike@example.com'
 }]
-

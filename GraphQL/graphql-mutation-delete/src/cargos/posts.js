@@ -1,14 +1,19 @@
 export let posts = [{
-    "postId": 1,
-    "title": "Avengers- Hulk",
-    "body": "Is Hulk dead?",
-    "published": true,
-    "author": 3
-}, 
-{
-    "postId": 2,
-    "title": "Avengers- Ironman",
-    "body": "Is Ironman returning?",
-    "published": true,
-    "author": 2
+    id: '10',
+    title: 'GraphQL 101',
+    body: 'This is how to use GraphQL...',
+    published: true,
+    author: '1'
+}, {
+    id: '11',
+    title: 'GraphQL 201',
+    body: 'This is an advanced GraphQL post...',
+    published: false,
+    author: '1'
+}, {
+    id: '12',
+    title: 'Programming Music',
+    body: '',
+    published: true,
+    author: '2'
 }]
