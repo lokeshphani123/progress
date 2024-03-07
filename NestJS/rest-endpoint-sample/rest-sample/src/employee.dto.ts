@@ -1,11 +1,9 @@
-export class Employee{
+export class Employee {
+  employeeName: string;
 
-    employeeName: string;
+  employeeId: number;
 
-    employeeId: number;
+  employeeOrganization: string;
 
-    employeeOrganization: string;
-
-    employeeSalary: number;
-
+  employeeSalary: number;
 }
