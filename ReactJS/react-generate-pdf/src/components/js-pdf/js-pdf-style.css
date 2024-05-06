@@ -1,0 +1,8 @@
+button {
+    background-color: #618685;
+    font-weight: strong;
+    width: 200px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}

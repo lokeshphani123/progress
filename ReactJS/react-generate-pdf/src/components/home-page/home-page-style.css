@@ -1,0 +1,24 @@
+.home-page {
+    background-color: #deeaee;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .grey-box {
+    background-color: #b1cbbb;
+    border: none;
+    text-align: center;
+    padding: 20px;
+}
+
+.grey-box .card-body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.grey-box .card-body > :not(:last-child) {
+    margin-bottom: 10px;
+}
