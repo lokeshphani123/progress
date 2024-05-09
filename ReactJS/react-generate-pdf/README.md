@@ -22,4 +22,4 @@ This project illustrates the different PDF options available for React apps and 
 
 # BLOG
 
-## TBD
+## [Don't forget to visit my Blog](https://medium.com/@lokeshlucky4/generating-powerful-pdfs-with-jspdf-and-react-pdf-renderer-1a8c8a5a141e)
