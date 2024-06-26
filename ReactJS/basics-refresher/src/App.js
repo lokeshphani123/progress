@@ -5,6 +5,9 @@ import Conditional from './components/conditional-display/conditional';
 import Styling from './components/dynamic-styling/styling';
 import DynamicList from './components/dynamic-list/list';
 import namesList from './utils/table';
+import Tabs from './components/dynamic-component-type/dynamic-component-type';
+import DynamicCustomComponent from './components/dynamic-component-type/dynamic-custom-component';
+import DefaultPropValues from './components/dynamic-component-type/dynamic-custom-component-default-prop';
 
 function PropsComponent(props){
   return (
@@ -252,6 +255,41 @@ function App() {
           <br/>
           <br/>
           Above is the scenario where we use Forwarded Props
+          <br/>
+          <h1>Setting Component Types Dynamically: </h1> We can inject the custom or built-in components as props. In exampl-1, we passed the built-in 'menu' component.
+          In example-1, we passed the custom component.
+          <h3>Example 1: (Pass built-in 'menu' component) </h3>
+          <code>
+          &lt;Tabs 
+          buttonContainer="menu"
+          buttons=&#123;
+          <br/>
+          &lt;&gt;
+          <br/>
+            &lt;TabButton/&gt; onSelect=&#123;() =&gt; handleSelect('Components')&#125;&gt; Components &lt;/TabButton&gt;
+          <br/>
+          &lt;/&gt;
+          </code>
+          <Tabs 
+          buttonContainer="menu"
+          buttons={
+            <>
+              <TabButton onSelect={() => handleSelect('Components')}>Components</TabButton>
+            </>
+          }></Tabs>
+          <br/>          
+          <h3>Example 2: (Pass custom 'SampleLabelComponent' component with 'label' prop) </h3>
+          <code>
+          &lt;DynamicCustomComponent SampleLabelComponent=&#123;SampleLabelComponent(&#123; label: "Custom Label" &#125;)&#125;&gt;&lt;/DynamicCustomComponent&gt;
+          </code>
+          <DynamicCustomComponent SampleLabelComponent={SampleLabelComponent({ label: "Custom Label" })}></DynamicCustomComponent>
+          <br/>
+          <h3>Example 3: (Setting default props values) </h3>
+          <code>
+          DefaultPropValues(&#123;abc = &lt;SampleLabel label="Default Prop Values Label" /&gt;&#125;)
+          &lt;DynamicCustomComponent SampleLabelComponent=&#123;SampleLabelComponent(&#123; label: "Custom Label" &#125;)&#125;&gt;&lt;/DynamicCustomComponent&gt;
+          </code>
+          <DefaultPropValues/>
           <br/>
           <h1>Multiple Component Slots: </h1> 
           <h1>Element Identifiers as Props: </h1> 
