@@ -15,4 +15,4 @@ This project illustrates the different types of Performance tests for an API
 
 # BLOG
 
-## TBD
+## [Don't forget to visit my Blog](https://medium.com/@lokeshlucky4/performance-testing-of-an-api-ensuring-robustness-and-scalability-befd479f4614)
